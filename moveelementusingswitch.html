@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MOVE ELEMENT USING SWITCH</title>
+
+</head>
+<body onload="docReady()" onkeydown="" onkeyup="" bgcolor="blue">
+
+<img id="img1" src="images.jpeg" style=" position: absolute;left:0; top:0;" height="397" width="560" >
+
+<script>
+    function leftarrowpressed()
+  {
+    var element = document.getElementById("img1");
+    element.style.left =parseInt(element.style.left) - 5 +"px";
+  }
+  function rightarrowpressed()
+  {
+    var element =document.getElementById("img1");
+    element.style.left=parseInt(element.style.left) + 5 + "px";
+  }
+  function uparrowpressed()
+  {
+    var element =document.getElementById("img1");
+    element.style.top=parseInt(element.style.top) - 5 + "px";
+  }
+  function downarrowpressed()
+  {
+  var element = document.getElementById("img1") ;
+  element.style.top =parseInt(element.style.top)  + 5 + "px";
+  }
+
+  function move(e)
+  {
+  switch (e.keyCode)
+  {
+    case 37:
+      leftarrowpressed();
+      break;
+    case 39:
+      rightarrowpressed();
+      break;
+    case 38:
+      uparrowpressed();
+      break;
+    case 40:
+      downarrowpressed();
+      break;
+  }
+  };
+  function docReady()
+  {
+  window.addEventListener("keydown", move);
+  }
+
+  //http://next.plnkr.co/edit/kjEMr49wI0YFMQsf0iuC?p=preview&utm_source=legacy&utm_medium=worker&utm_campaign=next&preview
+</script>
+</body>
+</html>
