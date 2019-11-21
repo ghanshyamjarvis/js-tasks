@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title> Looping in array </title>
+</head>
+<body>
+<p id="demo"> </p>
+
+<script>
+  var obj,i,j,k;
+
+  obj = {"Name":"shyam",
+          "Lastname":"chauhan",
+          "cars":[{ "name":"ford","model":["a","b","c"]},
+                 { "name":"BMW","model":["f","s","d"]},
+                 {"name":"fiat","model":["p","u","y"]}
+              ]
+          }
+
+  for (i in obj.cars)
+  {
+    j += "<h2>" + obj.cars[i].Name +"</h2>";
+    
+    for (k in obj.cars[i].model)
+    {
+      j +=obj.cars[i].model[k];
+    }
+  }
+  document.getElementById("demo").innerHTML=j
+</script>
+</body>
+</html>
