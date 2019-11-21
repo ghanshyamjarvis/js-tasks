@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>drop drown menu enable and disable using button</title>
+</head>
+<body>
+<input type="button" onclick="disable()" value="disabled">
+<input type="button" onclick="enable()" value="enable">
+<form>
+  <select id="ok">
+    <option>Apple</option>
+    <option>Mango</option>
+    <option>Banana</option>
+  </select>
+</form>
+<script>
+  function disable()
+  {
+    document.getElementById("ok").disabled=true;
+  }
+
+  function enable()
+  {
+  document.getElementById("ok").disabled=false;
+  }
+</script>
+</body>
+</html>
