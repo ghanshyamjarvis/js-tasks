@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Center Rectangle Movement</title>
+   <style>
+        #rect
+        {
+            height : 100px;
+            width : 100px;
+            outline : 1px solid red;
+            position : absolute;
+            background-color: lightblue;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+
+</head>
+
+<body onkeydown="action()">
+
+
+    <div id="rect"></div>
+
+
+<script>
+
+    let rect1 = null;
+
+    function inti()
+    {
+        rect1 = document.getElementById("rect");
+        rect1.style.position = "absolute";
+        rect1.style.height = "100px";
+        rect1.style.width = "100px";
+        rect1.style.top = "50%";
+        rect1.style.left = "50%";
+
+
+    }
+    window.onload = inti;
+
+    function action()
+    {
+        let key_code = event.which || event.keyCode;
+        let rect1width = parseInt(rect1.style.width);
+        let rect1height = parseInt(rect1.style.height);
+
+        let winWidth = parseInt(window.innerWidth);
+        let winHeight = parseInt(window.innerHeight);
+
+        console.log(parseInt(winWidth),"Window width");
+        console.log(parseInt(winHeight), "Window Height");
+
+        switch (key_code)
+        {
+            case 40 :   // Key Up
+                RectSmall();
+                break;
+            case 38 :   // Key Down
+                RectBig();
+                break;
+            default :
+                alert("Press Only Arrow Up / Down");
+        }
+
+        function RectSmall()
+        {
+            if(110 <= rect1width && 110 <= rect1height)
+            {
+                rect1.style.height = parseInt(rect1.style.height) - 10 + "px";
+                rect1.style.width = parseInt(rect1.style.width) - 10 + "px";
+            }
+
+        }
+
+        function RectBig()
+        {
+            if(winWidth-10 >= rect1width && winHeight-10    >= rect1height)
+            {
+                rect1.style.height = parseInt(rect1.style.height) + 10 + "px";
+                rect1.style.width = parseInt(rect1.style.width) + 10 + "px";
+            }
+        }
+    }
+
+
+</script>
+
+</body>
+</html>
