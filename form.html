@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Get Use Values in Form </title>
+</head>
+<body>
+<form id="demo">
+  First Name: <input type="text" name="fname" value="FNAME"><br>
+  Last Name: <input type="text" name="lname" value="LNAME"><br>
+  <button type="submit" value="CLICK"> BUTTON </button><br>
+  <button onclick="fn()"> TRy</button>
+</form>
+<p id="f"></p>
+<script>
+  function fn()
+  {
+    var x= document.getElementById("demo");
+    var txt="";
+    var i;
+    for (i=0;i < x.length;i++)
+    {
+      txt += x.elements[i].value + "<br>";
+    }
+    document.getElementById("f").innerHTML=txt;
+  }
+</script>
+</body>
+</html>
