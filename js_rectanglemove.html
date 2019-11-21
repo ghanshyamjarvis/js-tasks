@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Rectangle Animation</title>
+
+    <style>
+        #rect
+        {
+            height : 100px;
+            width : 100px;
+            position : relative;
+            background-color: lightcoral;
+        }
+    </style>
+
+    <script>
+        let rect1 = null;
+        function init()
+        {
+            rect1 = document.getElementById("rect");
+            rect1.style.position = "relative";
+            rect1.style.left = "0px";
+            rect1.style.top = "0px";
+
+        }
+        function action()
+        {
+            let key_code = event.which || event.keyCode;
+            let rect1left = parseInt(rect1.style.left);
+            let rect1top = parseInt(rect1.style.top);
+            let winWidth = parseInt(window.innerWidth) - 120;
+            let winHeight = parseInt(window.innerHeight) - 120;
+
+             // Console Log to check left, top, height & width
+
+            console.log(parseInt(rect1left), "Left");
+            console.log(parseInt(rect1top), "Top");
+            console.log(parseInt(winWidth),"Window width");
+            console.log(parseInt(winHeight), "Window Height");
+
+            if(rect1left == 0)
+            {
+                if((rect1top == 0) )
+                {
+                    switch(key_code)
+                    {
+                        case 39: // Right Arrow Key
+                            RightArrow();
+                            break;
+                        case 40: // Down Arrow Key
+                            DownArrow();
+                            break;
+                        default:
+                            window.alert("End of the Screen");
+                            break;
+                    }
+                }
+                else if(rect1top <= winHeight)
+                {
+                    switch(key_code)
+                    {
+                        case 38: // Up Arrow Key
+                            UpArrow();
+                            break;
+                        case 40: // Down Arrow Key
+                            DownArrow();
+                            break;
+                        default:
+                            window.alert("End of the Screen");
+                            break;
+                    }
+                }
+                else if(rect1top >= winHeight)
+                {
+                    switch(key_code)
+                    {
+                        case 38: // Up Arrow Key
+                            UpArrow();
+                            break;
+                        case 39: // Right Arrow Key
+                            RightArrow();
+                            break;
+                        default:
+                            window.alert("End of the Screen");
+                            break;
+                    }
+                }
+            }
+            else if((rect1top == 0 && rect1left <= winWidth) || (rect1top >= winHeight && rect1left <= winWidth))
+            {
+                switch(key_code)
+                {
+                    case 37: // Left Arrow Key
+                        LeftArrow();
+                        break;
+                    case 39: // Right Arrow Key
+                        RightArrow();
+                        break;
+                    default:
+                        window.alert("End of the Screen");
+                        break;
+                }
+            }
+            else if(rect1left >= winWidth)
+            {
+                if(rect1top == 0)
+                {
+                    switch(key_code)
+                    {
+                        case 37: // Left Arrow Key
+                            LeftArrow();
+                            break;
+                        case 40: // Down Arrow Key
+                            DownArrow();
+                            break;
+                        default:
+                            window.alert("End of the Screen");
+                            break;
+                    }
+                }
+                else if(rect1top != 0 && rect1top <= winHeight)
+                {
+                    switch(key_code)
+                    {
+                        case 38: // Up Arrow Key
+                            UpArrow();
+                            break;
+                        case 40: // Down Arrow Key
+                            DownArrow();
+                            break;
+                        default:
+                            window.alert("End of the Screen");
+                            break;
+                    }
+                }
+                else if(rect1top >= winHeight)
+                {
+                    switch(key_code)
+                    {
+                        case 37: // Left Arrow Key
+                            LeftArrow();
+                            break;
+                        case 38: // Up Arrow Key
+                            UpArrow();
+                            break;
+                        default:
+                            window.alert("End of the Screen");
+                            break;
+                    }
+                }
+            }
+        }
+
+        function LeftArrow()
+        {
+            rect1.style.left = parseInt(rect1.style.left) - 10 + "px";
+        }
+        function UpArrow()
+        {
+            rect1.style.top = parseInt(rect1.style.top) - 10 + "px";
+        }
+        function RightArrow()
+        {
+            rect1.style.left = parseInt(rect1.style.left) + 10 + "px";
+        }
+        function DownArrow()
+        {
+            rect1.style.top = parseInt(rect1.style.top) + 10 + "px";
+        }
+
+        window.onload = init;
+    </script>
+
+</head>
+
+<body onkeydown="action()">
+
+    <div id ="rect" align="center"></div>
+
+</body>
+</html>
