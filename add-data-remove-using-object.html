@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+Name: <input type="text" id="nm"><br>
+Surname: <input type="text" id="sr"><br>
+<button onclick="fn()">Add</button>
+
+<table id="tbl1" border="5px">
+  <tr>
+    <th>Name</th>
+    <th>Surname</th>
+    <th>Action</th>
+  </tr>
+  </table>
+
+<script>
+  var data =[];
+
+  function fn()
+    {
+      var name = document.getElementById("nm").value;
+      var surname = document.getElementById("sr").value;
+
+      if (!name || !surname)// if(name === "" && surname === "")
+   {
+    alert("Blank Not Allow");
+    return;
+   }
+  var user ={};
+   user.name = name;
+   user.surname = surname;
+   data.push(user);
+
+   var Html ="<tr><th>Name</th> <th>Surname</th> <th>Action</th></tr>";
+   data.forEach(function (value, index)
+  {
+      Html += "<tr> <td>"+ value.name +"</td> <td>"+ value.surname +"</td> <td><button onclick='removeuser("+ index +") ' > DELETE </button> </td></tr>";
+
+  })
+   document.getElementById("tbl1").innerHTML=Html;
+
+   document.getElementById("nm").value="";
+   document.getElementById("sr").value="";
+  }
+function removeuser(index)  {
+    alert(index);
+      data.splice(index,1);
+
+    var Html ="<tr><th>Name</th> <th>Surname</th><th>Action</th></tr>";
+    data.forEach(function (value, index) {
+        Html += "<tr> <td>"+ value.name +"</td> <td>"+ value.surname +"</td> <td><button onclick='removeuser("+ index +") ' > DELETE </button> </td></tr>";
+    })
+    document.getElementById("tbl1").innerHTML=Html;
+
+}
+</script>
+
+</body>
+</html>
