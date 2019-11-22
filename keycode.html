@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>key code</title>
+</head>
+<body>
+
+<h2>To Know the Ascii Value</h2>
+
+<input type="text" id="demo" onkeyup="key(event)">
+<p id="dd"> </p>
+
+<script>
+
+  function key(event)
+  {
+    document.getElementById("dd").innerHTML=document.getElementById("demo").innerHTML =event.keyCode;
+
+  }
+</script>
+
+</body>
+</html>
