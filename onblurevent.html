@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>on Blur Event</title>
+</head>
+<body>
+First Name: <input type="text" id="fname" onblur="fn()">
+<script>
+  function fn()
+  {
+var x=document.getElementById("fname").value;
+x.value = x.value.toUpperCase();
+  }
+</script>
+</body>
+</html>
