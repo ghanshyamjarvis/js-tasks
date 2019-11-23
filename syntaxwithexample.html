@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>syntax</title>
+<style>
+
+</style>
+</head>
+
+<body>
+<p id="demo"> </p>
+<p id="f"></p>
+
+<button onclick="fn1()"> try </button>
+<script>
+  /*var fruits = ["orange","apple","banana"];
+var len =fruits.length;
+var i;
+var txt ="<ul>";
+for (i=0 ; i<len ; i++)
+  {
+   txt += "<li>" + fruits[i] + "</li>";
+  }
+txt += "</ul>";
+document.getElementById("demo").innerHTML=txt;
+*/
+/*
+  var fruits, text;
+
+  fruits = ["Banana", "Orange", "Apple", "Mango"];
+
+  text = "<ul>";
+  fruits.forEach(myFunction);
+  text += "</ul>";
+  document.getElementById("demo").innerHTML = text;
+
+  function myFunction(value) {
+    text += "<li>" + value + "</li>";
+  }
+*/
+
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("demo").innerHTML=fruits;
+
+function fn1()
+{
+  fruits.push("kiwi");
+  document.getElementById("demo").innerHTML=fruits;
+}
+
+
+</script>
+
+</body>
+
+</html>
