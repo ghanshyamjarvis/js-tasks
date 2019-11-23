@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Time for 2 4 6 sec</title>
+
+</head>
+
+<body>
+<button type="button" onclick="secrotation()">Display</button>
+<p id="demo"></p>
+<script>
+function secrotation()
+{
+  setTimeout(fn1,2000)
+  setTimeout(fn2, 4000)
+  setTimeout(fn3, 6000)
+}
+function fn1()
+{
+document.getElementById("demo").innerHTML="2 sec";
+}
+function fn2()
+{
+  document.getElementById("demo").innerHTML="4 sec;"
+}
+function fn3()
+{
+  document.getElementById("demo").innerHTML="6 sec";
+}
+</script>
+</body>
+</html>
