@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Windows Open Close With Button</title>
+</head>
+
+
+<body>
+<button type="button" value="open onewindow" onclick="fn1()"> Click For Open Window</button>
+<button type="button" value="close onewindow" onclick="fn2()"> Click For Close Window</button>
+
+<script>
+  function fn1() {
+    onewindow = window.open("", "", "width=400 ,height=400");
+  }
+  function fn2()
+  {
+  onewindow.close();
+  }
+</script>
+</body>
+</html>
