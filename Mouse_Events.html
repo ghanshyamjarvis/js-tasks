@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mouse Events</title>
+</head>
+
+<body>
+<button onclick="f1(this)"  style="background-color: yellow" > Mouse Click</button>
+<button onmouseover="f2(this)" style="background-color: lavender" > Mouse Over</button>
+<p id="ID"></p>
+<script>
+
+  function f1(x)
+  {
+    x.style.color ="red";
+    document.getElementById("ID").innerHTML="Mouse Click Event Using Function"
+  }
+
+  function f2(x)
+  {
+    x.style.color ="Pink";
+    document.getElementById("ID").innerHTML="Mouse Over Event Using Function"
+  }
+</script>
+</body>
+</html>
