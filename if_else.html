@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>If Else</title>
+</head>
+<body>
+<p id="ID"></p>
+
+<script>
+/*
+var me ="one";
+
+function fn()
+{
+  var first = document.getElementById("image1");
+     if (me === "one")
+     {
+        image.src="images.jpeg";
+        me ="s";
+     }
+    else
+      {
+        image.src="index.png"
+        me="s";
+      }
+
+}
+*/
+var Fname,Lname;
+
+  Fname= "Shyam";
+  Lname ="Chauhan";
+
+if (!Fname && Lname)
+
+//((Fname = "Shyam") && (Lname = "Chauhan"))
+// ((Fname == "Shyam") || (Lname !== "Chauhan"))
+// ((Fname !== "Shyam") && (Lname !== "Chauhan"))
+
+{
+    document.getElementById("ID").innerHTML="Match";
+    //document.write("Hello");
+}
+else
+  {
+    document.getElementById("ID").innerHTML="Dont Match";
+    //document.write("Not Match")
+  }
+
+</script>
+</body>
+</html>
